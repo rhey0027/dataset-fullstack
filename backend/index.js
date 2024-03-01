@@ -24,7 +24,7 @@ app.use('/buckets', bucketRoute)
 app.use('/users', userRoute)
 
 // cors
-// app.use(cors());
+app.use(cors());
 app.use(cors({
   origin: "https://dataset-fullstack.vercel.app/"
 })
