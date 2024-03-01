@@ -1,5 +1,5 @@
 {
-  "proxy": "https://dataset-fullstack.vercel.app/",
+
   "name": "backend",
   "version": "1.0.0",
   "description": "rest api with authentication",

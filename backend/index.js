@@ -6,15 +6,8 @@ import userRoute from './routes/userRoute.js'
 import cors from 'cors';
 
 
+
 import urlencoded from 'express';
-
-// cors
-app.use(cors());
-// app.use(cors({
-//   origin: "https://dataset-fullstack.vercel.app/"
-// })
-// );
-
 const app = express();
 app.use(express.json())
 dotenv.config()
@@ -30,7 +23,12 @@ app.use((req, res, next) => {
 app.use('/buckets', bucketRoute)
 app.use('/users', userRoute)
 
-
+// cors
+app.use(cors());
+// app.use(cors({
+//   origin: "https://dataset-fullstack.vercel.app/"
+// })
+// );
 
 app.get('/',(req, res) => {
   res.json({msg: 'Server is active, all users account...'})
