@@ -10,10 +10,10 @@ import urlencoded from 'express';
 
 // cors
 app.use(cors());
-app.use(cors({
-  origin: "https://dataset-fullstack.vercel.app/"
-})
-);
+// app.use(cors({
+//   origin: "https://dataset-fullstack.vercel.app/"
+// })
+// );
 
 const app = express();
 app.use(express.json())
