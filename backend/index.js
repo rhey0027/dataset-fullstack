@@ -48,4 +48,3 @@ const connect = async() => {
     console.log(`Active on port- ${port}`)
   })
 
-module.exports = app;
