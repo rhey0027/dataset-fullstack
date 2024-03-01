@@ -3,17 +3,17 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import bucketRoute from './routes/bucketRoute.js'
 import userRoute from './routes/userRoute.js'
-// import cors from 'cors';
+import cors from 'cors';
 
 
 import urlencoded from 'express';
 
 // cors
-// app.use(cors());
-// app.use(cors({
-//   origin: "https://bucketlist-psi.vercel.app/"
-// })
-// );
+app.use(cors());
+app.use(cors({
+  origin: "https://dataset-fullstack.vercel.app/"
+})
+);
 
 const app = express();
 app.use(express.json())
