@@ -14,7 +14,7 @@ const BucketDetails = ({ bucket }) => {
     if(!user) {
       return
     }
-    const response = await fetch('/buckets/' + bucket._id, {
+    const response = await fetch('https://dataset-fullstack.vercel.app/buckets/' + bucket._id, {
       method: 'DELETE',
       headers: {
         'Authorization':`Bearer ${user.token}`

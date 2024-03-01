@@ -26,7 +26,7 @@ const BucketForm = () => {
     }
     const bucket = { title, timeline, description }
     
-    const response = await fetch('/buckets', {
+    const response = await fetch('https://dataset-fullstack.vercel.app/buckets', {
       method: 'POST',
       body: JSON.stringify(bucket),
       headers: { 

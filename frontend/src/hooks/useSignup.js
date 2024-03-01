@@ -11,7 +11,7 @@ const signup = async( name, email, password ) => {
   setIsLoading(true);
   setError(null);
   
-  const response = await fetch('/users/signup', {
+  const response = await fetch('https://dataset-fullstack.vercel.app/signup', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ name, email, password })
