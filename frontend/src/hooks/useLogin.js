@@ -12,7 +12,7 @@ export const useLogin = () => {
     setError(null)
     setIsLoading(true)
 
-    const response = await fetch('https://dataset-fullstack.vercel.app/users/login', {
+    const response = await fetch('https://dataset-fullstack.vercel.app/users/login/', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ email, password })
