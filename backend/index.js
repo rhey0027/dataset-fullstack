@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import bucketRoute from './routes/bucketRoute.js'
 import userRoute from './routes/userRoute.js'
-// import cors from 'cors';
+import cors from 'cors';
 
 
 
@@ -25,10 +25,10 @@ app.use('/users', userRoute)
 
 // cors
 // app.use(cors());
-// app.use(cors({
-//   origin: "https://dataset-fullstack.vercel.app/"
-// })
-// );
+app.use(cors({
+  origin: "https://dataset-fullstack.vercel.app/"
+})
+);
 
 app.get('/',(req, res) => {
   res.json({msg: 'Server is active, all users account...'})
