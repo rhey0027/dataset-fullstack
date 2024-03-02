@@ -1,19 +1,23 @@
 import express from 'express';
-import dotenv from 'dotenv';
+import "dotenv/config";
+import http from 'http';
 import mongoose from 'mongoose';
 import bucketRoute from './routes/bucketRoute.js'
 import userRoute from './routes/userRoute.js'
 import cors from 'cors';
-
-
-
-import urlencoded from 'express';
-const app = express();
-app.use(express.json())
 dotenv.config()
+
+const app = express();
+
+// cors
+app.use(cors());
+app.use(express.json());
+app.use(urlencoded({ extended: false}));
+
 // port
 const port = process.env.PORT || 5000
-app.use(urlencoded({ extended: true}))
+
+const server = http.createServer(app);
 
 // middleware for route
 app.use((req, res, next) => {
@@ -22,13 +26,6 @@ app.use((req, res, next) => {
 })
 app.use('/buckets', bucketRoute)
 app.use('/users', userRoute)
-
-// cors
-app.use(cors());
-app.use(cors({
-  origin: "https://dataset-fullstack.vercel.app/"
-})
-);
 
 app.get('/',(req, res) => {
   res.json({msg: 'Server is active, all users account...'})
@@ -48,4 +45,3 @@ const connect = async() => {
     console.log(`Active on port- ${port}`)
   })
 
-  export default app;
