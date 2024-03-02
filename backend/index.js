@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import bucketRoute from './routes/bucketRoute.js'
 import userRoute from './routes/userRoute.js'
 import urlencoded  from 'express';
+import axios from 'axios';
 import cors from 'cors';
 dotenv.config()
 
@@ -19,6 +20,17 @@ app.use(urlencoded({ extended: false}));
 const port = process.env.PORT || 5000
 
 const server = http.createServer(app);
+
+// axios
+const get = async (url) => {
+  const response = await axios.get(url, {
+    headers: {
+      Accept: 'application/json',
+      'Accept-Encoding': "identity"
+    }
+  });
+}
+
 
 // middleware for route
 app.use((req, res, next) => {
@@ -46,3 +58,4 @@ const connect = async() => {
     console.log(`Active on port- ${port}`)
   })
 
+export default { get };
