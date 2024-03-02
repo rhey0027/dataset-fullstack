@@ -1,9 +1,10 @@
 import express from 'express';
-import "dotenv/config";
+import dotenv from 'dotenv';
 import http from 'http';
 import mongoose from 'mongoose';
 import bucketRoute from './routes/bucketRoute.js'
 import userRoute from './routes/userRoute.js'
+import urlencoded  from 'express';
 import cors from 'cors';
 dotenv.config()
 
