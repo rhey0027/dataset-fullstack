@@ -14,7 +14,7 @@ const Home = () => {
 
     useEffect(() => {
       const fetchBuckets = async() => {
-        const response = await fetch('/buckets', {
+        const response = await fetch('https://dataset-fullstack.vercel.app/buckets/', {
           headers: { 
             'Authorization': `Bearer ${user.token}`
           }
