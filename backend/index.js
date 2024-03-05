@@ -4,13 +4,13 @@ import mongoose from 'mongoose';
 import bucketRoute from './routes/bucketRoute.js'
 import userRoute from './routes/userRoute.js'
 import urlencoded  from 'express';
-import cors from 'cors';
+// import cors from 'cors';
 dotenv.config()
 
 const app = express();
 
 // cors
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(urlencoded({ extended: false}));
 
